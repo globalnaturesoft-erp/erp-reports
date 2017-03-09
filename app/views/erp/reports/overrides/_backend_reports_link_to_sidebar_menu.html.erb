@@ -1,0 +1,54 @@
+<li class="nav-item <%= "active open" if ["erp/reports/backend/sales"].include?(params[:controller]) %>">
+    <a href="javascript:;" class="nav-link nav-toggle">
+        <i class="fa fa-line-chart"></i>
+        <span class="title"><%= t('.report') %></span>
+        <% if ["erp/reports/backend/sales"].include?(params[:controller]) %>
+            <span class="selected"></span>
+            <span class="arrow open"></span>
+        <% else %>
+            <span class="arrow"></span>
+        <% end %>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item">
+            <a href="" class="nav-link">
+                <span class="title"><%= t('.end_of_day') %></span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link">
+                <span class="title"><%= t('.sale') %></span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link">
+                <span class="title"><%= t('.purchase') %></span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link">
+                <span class="title"><%= t('.inventory') %></span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link">
+                <span class="title"><%= t('.customer') %></span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link">
+                <span class="title"><%= t('.supplier') %></span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link">
+                <span class="title"><%= t('.employees') %></span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link">
+                <span class="title"><%= t('.financial') %></span>
+            </a>
+        </li>
+    </ul>
+</li>

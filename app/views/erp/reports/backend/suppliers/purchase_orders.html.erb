@@ -1,0 +1,26 @@
+<table class="table table-bordered table-striped flip-content">
+    <thead class="flip-content">
+        <tr>
+            <th width="20%" class="text-left">Mã phiếu</th>
+            <th class="numeric">Thời gian</th>
+            <th class="numeric">Nhân viên</th>
+            <th class="numeric">Số lượng sản phẩm</th>
+            <th class="numeric">Tổng tiền hàng</th>
+            <th class="numeric">Giảm giá HĐ</th>
+            <th class="numeric text-right">Tổng tiền</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% (1..4).each_with_index do |order,index| %>
+        <tr>
+            <td class="text-left"><strong># PN00<%= index+1 %></strong></td>
+            <td class="text-left">2017-03-07</td>
+            <td class="text-left">Hung Nguyen</td>
+            <td class="text-left">29</td>
+            <td class="text-left">1,376,000</td>
+            <td class="text-left">0</td>
+            <td class="numeric text-right">1,376,000</td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

@@ -1,0 +1,95 @@
+<table class="table table-advance table-hover table-striped table-checkable order-column" id="">
+    <thead>
+        <tr>
+            <th></th>
+            <% if get_columns(params).include?("period") %>
+                <th>
+                    <%= t('.period') %>
+                </th>
+            <% end %>
+            <% if get_columns(params).include?("sales_order_quantity") %>
+                <th>
+                    <%= t('.sales_order_quantity') %>
+                </th>
+            <% end %>
+            <% if get_columns(params).include?("total_amount") %>
+                <th>
+                    <%= t('.total_amount') %>
+                </th>
+            <% end %>
+            <% if get_columns(params).include?("invoice_discount") %>
+                <th>
+                    <%= t('.invoice_discount') %>
+                </th>
+            <% end %>
+            <% if get_columns(params).include?("goods_sales") %>
+                <th>
+                    <%= t('.goods_sales') %>
+                </th>
+            <% end %>
+            <% if get_columns(params).include?("return_order_quantity") %>
+                <th>
+                    <%= t('.return_order_quantity') %>
+                </th>
+            <% end %>
+            <% if get_columns(params).include?("return_cost") %>
+                <th>
+                    <%= t('.return_cost') %>
+                </th>
+            <% end %>
+            <% if get_columns(params).include?("net_revenue") %>
+                <th>
+                    <%= t('.net_revenue') %>
+                </th>
+            <% end %>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="active">
+            <td></td>
+            <td></td>
+            <td><strong><%= @order_quantity_total %></strong></td>
+            <td><strong><%= @order_amount_total %></strong></td>
+            <td><strong>@todo</strong></td>
+            <td><strong><%= @order_amount_total %></strong></td>
+            <td><strong>@todo</strong></td>
+            <td><strong>@todo</strong></td>
+            <td><strong>@todo</strong></td>
+        </tr>
+        <% @dates.each do |row| %>
+            <tr class="odd gradeX has-child-table" data-url="<%= erp_reports.backend_sales_orders_path(date: row[:date]) %>">
+                <td></td>
+                <% if get_columns(params).include?("period") %>
+                <td>
+                    <i class="fa fa-plus expand tr-expand-button"></i>
+                    <strong><%= format_date(row[:date]) %></strong>
+                </td>
+                <% end %>
+                <% if get_columns(params).include?("sales_order_quantity") %>
+                <td><%= row[:orders_count] %></td>
+                <% end %>
+                <% if get_columns(params).include?("total_amount") %>
+                <td><%= row[:total_amount] %></td>
+                <% end %>
+                <% if get_columns(params).include?("invoice_discount") %>
+                <td>@todo</td>
+                <% end %>
+                <% if get_columns(params).include?("goods_sales") %>
+                <td><%= row[:total_amount] %></td>
+                <% end %>
+                <% if get_columns(params).include?("return_order_quantity") %>
+                <td>@todo</td>
+                <% end %>
+                <% if get_columns(params).include?("return_cost") %>
+                <td>@todo</td>
+                <% end %>
+                <% if get_columns(params).include?("net_revenue") %>
+                <td>@todo</td>
+                <% end %>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+<% if @dates.empty? %>
+    <div class="datalist-empty-line"><%= t('.no_matching_records_found') %></div>
+<% end %>

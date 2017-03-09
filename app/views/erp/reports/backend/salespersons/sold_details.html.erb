@@ -1,0 +1,20 @@
+<table class="table table-bordered table-striped flip-content">
+    <thead class="flip-content">
+        <tr>
+            <th width="20%" class="text-left">Mã hàng</th>
+            <th class="numeric">Tên hàng</th>
+            <th class="numeric">Số lượng bán</th>
+            <th class="numeric text-right">Tổng giá trị</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% (1..4).each_with_index do |order,index| %>
+        <tr>
+            <td class="text-left"><strong># SP00<%= index+1 %></strong></td>
+            <td class="text-left">Rượu Vooka 750ml</td>
+            <td class="text-left">22</td>
+            <td class="numeric text-right">1,540,000</td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

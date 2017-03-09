@@ -1,0 +1,55 @@
+<% content_for :title do %>
+    <%= t('.sold_report') %>
+<% end %>
+
+<% content_for :page_title do %>
+    <i class="fa fa-file-text"></i> <%= t('.sold_report') %>
+<% end %>
+
+<% content_for :page_toolbar do %>
+    <div class="btn-group">
+        <div class="clearfix">
+        </div>
+    </div>
+<% end %>
+
+<%= erp_datalist(
+    url: erp_reports.backend_salesperson_sold_list_path,
+    filters: [
+        {
+            text: t('.chart'), name: '', value: true, checked: false
+        },
+        {
+            text: t('.report'), name: '', value: true, checked: false
+        },
+        {
+            divider: true
+        },
+        {
+            text: t('.period'), name: '', value: '', checked: false
+        },
+        {
+            text: t('.profit'), name: '', value: '', checked: false
+        },
+        {
+            text: t('.invoice_discount'), name: '', value: '', checked: false
+        },
+        {
+            text: t('.refund'), name: '', value: '', checked: false
+        },
+        {
+            text: t('.sold_by'), name: '', value: '', checked: false
+        }
+    ],
+    columns: [
+        {
+            text: t('.name'), name: 'name', value: true, checked: true
+        },
+        {
+            text: t('.sold_products_quantity'), name: 'sold_products_quantity', value: true, checked: true
+        },
+        {
+            text: t('.total_amount'), name: 'total_amount', value: true, checked: true
+        }
+    ]
+) %>

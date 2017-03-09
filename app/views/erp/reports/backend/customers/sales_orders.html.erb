@@ -1,0 +1,35 @@
+<table class="table table-bordered table-striped flip-content">
+    <thead class="flip-content">
+        <tr>
+            <th width="20%" class="text-left">Mã hóa đơn</th>
+            <th class="numeric">Thời gian đặt hàng</th>
+            <th class="numeric">Nhân viên</th>
+            <th class="numeric">SL mặt hàng</th>
+            <th class="numeric text-right">Tổng tiền hàng</th>
+            <th class="numeric text-right">Giảm giá HĐ</th>
+            <th class="numeric text-right">Doanh thu</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="active">
+            <td class="text-left"><strong>SL hóa đơn: 4</strong></td>
+            <td class="text-left"><strong></strong></td>
+            <td class="text-left"><strong></strong></td>
+            <td class="text-left"><strong>92</strong></td>
+            <td class="numeric text-right"><strong>8,136,000</strong></td>
+            <td class="numeric text-right"><strong>0</strong></td>
+            <td class="numeric text-right"><strong>8,136,000</strong></td>
+        </tr>
+        <% (1..4).each do |order| %>
+        <tr>
+            <td class="text-left"><strong># HĐ00012</strong></td>
+            <td class="text-left">2017-03-08 08:55</td>
+            <td class="text-left">Supper Admin</td>
+            <td class="text-left">23</td>
+            <td class="numeric text-right">2,034,000</td>
+            <td class="numeric text-right">0</td>
+            <td class="numeric text-right">2,034,000</td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

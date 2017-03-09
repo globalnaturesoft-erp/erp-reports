@@ -1,0 +1,28 @@
+<table class="table table-bordered table-striped flip-content">
+    <thead class="flip-content">
+        <tr>
+            <th width="20%" class="text-left">Thời gian</th>
+            <th class="numeric text-right">SL hóa đơn</th>
+            <th class="numeric text-right">Tổng tiền hàng</th>
+            <th class="numeric text-right">Giảm giá HĐ</th>
+            <th class="numeric text-right">Doanh thu</th>
+            <th class="numeric text-right">SL đơn trả</th>
+            <th class="numeric text-right">Giá trị trả</th>
+            <th class="numeric text-right">Doanh thu (thuần)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% (1..4).each_with_index do |order,index| %>
+        <tr>
+            <td class="text-left"><strong>2017-03-07</strong></td>
+            <td class="numeric text-right">1</td>
+            <td class="numeric text-right">1,450,000</td>
+            <td class="numeric text-right">0</td>
+            <td class="numeric text-right">1,450,000</td>
+            <td class="numeric text-right">0</td>
+            <td class="numeric text-right">0</td>
+            <td class="numeric text-right">1,540,000</td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

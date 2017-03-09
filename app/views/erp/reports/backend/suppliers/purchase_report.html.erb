@@ -1,0 +1,73 @@
+<% content_for :title do %>
+    <%= t('.purchase_report') %>
+<% end %>
+
+<% content_for :page_title do %>
+    <i class="fa fa-file-text"></i> <%= t('.purchase_report') %>
+<% end %>
+
+<% content_for :page_toolbar do %>
+    <div class="btn-group">
+        <div class="clearfix">
+        </div>
+    </div>
+<% end %>
+
+<%= erp_datalist(
+    url: erp_reports.backend_supplier_purchase_list_path,
+    filters: [
+        {
+            text: t('.chart'), name: '', value: true, checked: false
+        },
+        {
+            text: t('.report'), name: '', value: true, checked: false
+        },
+        {
+            divider: true
+        },
+        {
+            text: t('.period'), name: '', value: '', checked: false
+        },
+        {
+            text: t('.profit'), name: '', value: '', checked: false
+        },
+        {
+            text: t('.invoice_discount'), name: '', value: '', checked: false
+        },
+        {
+            text: t('.refund'), name: '', value: '', checked: false
+        },
+        {
+            text: t('.sold_by'), name: '', value: '', checked: false
+        }
+    ],
+    columns: [
+        {
+            text: t('.supplier_code'), name: 'supplier_code', value: true, checked: true
+        },
+        {
+            text: t('.supplier_name'), name: 'supplier_name', value: true, checked: true
+        },
+        {
+            text: t('.purchase_order_quantity'), name: 'purchase_order_quantity', value: true, checked: true
+        },
+        {
+            text: t('.total'), name: 'total', value: true, checked: true
+        },
+        {
+            text: t('.discount'), name: 'discount', value: true, checked: true
+        },
+        {
+            text: t('.purchase_amount'), name: 'purchase_amount', value: true, checked: true
+        },
+        {
+            text: t('.return_order_quantity'), name: 'return_order_quantity', value: true, checked: true
+        },
+        {
+            text: t('.return_cost'), name: 'return_cost', value: true, checked: true
+        },
+        {
+            text: t('.net_revenue'), name: 'net_revenue', value: true, checked: true
+        }
+    ]
+) %>

@@ -1,0 +1,57 @@
+Hàng đã mua (nhập) từ nhà cung cấp
+<table class="table table-advance table-hover table-striped table-checkable order-column" id="">
+    <thead>
+        <tr>
+            <th></th>
+            <% if get_columns(params).include?("supplier_code") %>
+                <th>
+                    <%= t('.supplier_code') %>
+                </th>
+            <% end %>
+            <% if get_columns(params).include?("supplier_name") %>
+                <th>
+                    <%= t('.supplier_name') %>
+                </th>
+            <% end %>
+            <% if get_columns(params).include?("product_quantity") %>
+                <th>
+                    <%= t('.product_quantity') %>
+                </th>
+            <% end %>
+            <% if get_columns(params).include?("total") %>
+                <th>
+                    <%= t('.total') %>
+                </th>
+            <% end %>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="active">
+            <td></td>
+            <td><strong>Số lượng NCC: 3</strong></td>
+            <td><strong></strong></td>
+            <td><strong>@todo</strong></td>
+            <td><strong>@todo</strong></td>
+        </tr>
+        <% (1..3).each do |row| %>
+            <tr class="odd gradeX has-child-table" data-url="<%= erp_reports.backend_supplier_goods_bought_details_path %>">
+                <td></td>
+                <% if get_columns(params).include?("supplier_code") %>
+                <td>
+                    <i class="fa fa-plus expand tr-expand-button"></i>
+                    <strong>NCC0001</strong>
+                </td>
+                <% end %>
+                <% if get_columns(params).include?("supplier_name") %>
+                <td>Công ty ABC</td>
+                <% end %>
+                <% if get_columns(params).include?("product_quantity") %>
+                <td>@todo</td>
+                <% end %>
+                <% if get_columns(params).include?("total") %>
+                <td>@todo</td>
+                <% end %>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
